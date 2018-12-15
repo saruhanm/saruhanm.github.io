@@ -1,49 +1,230 @@
 <!DOCTYPE html>
-<html lang="english">
+<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-        <meta charset="utf-8" />
-        <title>WeRateDogs twitter data analysis</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+    <title>WeRateDogs twitter data analysis - Data Science Blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+
+
+<link rel="canonical" href="/WeRateDogs twitter data analysis.html">
+
+        <meta name="author" content="Mehmet Saruhan" />
+        <meta name="keywords" content="WeRateDogs Twitter Python" />
+        <meta name="description" content="The aim of the project is to gather data from a variety of sources and in a variety of formats using Python and its libraries and assess its quality and tidiness, then clean it. The dataset is the tweet archive of Twitter user @dog_rates, also known as WeRateDogs." />
+
+        <meta property="og:site_name" content="Data Science Blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="WeRateDogs twitter data analysis"/>
+        <meta property="og:url" content="/WeRateDogs twitter data analysis.html"/>
+        <meta property="og:description" content="The aim of the project is to gather data from a variety of sources and in a variety of formats using Python and its libraries and assess its quality and tidiness, then clean it. The dataset is the tweet archive of Twitter user @dog_rates, also known as WeRateDogs."/>
+        <meta property="article:published_time" content="2018-08-14" />
+            <meta property="article:section" content="Projects" />
+            <meta property="article:tag" content="WeRateDogs Twitter Python" />
+            <meta property="article:author" content="Mehmet Saruhan" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/autumn.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+
+
+
 </head>
+<body>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Data Science Blog </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/category/projects.html">Projects</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/WeRateDogs twitter data analysis.html" rel="bookmark"
-           title="Permalink to WeRateDogs twitter data analysis">WeRateDogs twitter data analysis</a></h1>
-    </header>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Data Science Blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/category/projects.html">Projects</a></li>
+                    <li><a href="mailto:mbsaruhan1@gmail.com">Email</a></li>
+                    <li><a href="/pdfs/mehmetResume.pdf">Resume</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
 
-    <div class="entry-content">
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/WeRateDogs twitter data analysis.html"
+                       rel="bookmark"
+                       title="Permalink to WeRateDogs twitter data analysis">
+                        WeRateDogs twitter data analysis
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
 <footer class="post-info">
-        <abbr class="published" title="2018-08-14T00:00:00-07:00">
-                Published: Tue 14 August 2018
-        </abbr>
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2018-08-14T00:00:00-07:00"> Tue 14 August 2018</time>
+    </span>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/mehmet-saruhan.html">Mehmet Saruhan</a>
-        </address>
-<p>In <a href="/category/projects.html">Projects</a>.</p>
-<p>tags: <a href="/tag/weratedogs-twitter-python.html">WeRateDogs Twitter Python</a> </p>
-</footer><!-- /.post-info -->      <style type="text/css">/*!
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/weratedogs-twitter-python.html">WeRateDogs Twitter Python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <style type="text/css">/*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -122,12 +303,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -140,27 +329,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -356,7 +557,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -366,11 +569,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -618,6 +834,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -656,7 +875,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -778,6 +997,10 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 
 
 
@@ -794,16 +1017,24 @@ div.output_unrecognized a:hover {
 }
 
 
+
+
+
 .rendered_html pre,
+
 
 
 
 .rendered_html tr,
 .rendered_html th,
 
-.rendered_html td,
 
-
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 .rendered_html * + table {
   margin-top: 1em;
 }
@@ -819,6 +1050,11 @@ div.output_unrecognized a:hover {
 
 .rendered_html img.unconfined,
 
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
@@ -869,8 +1105,15 @@ h6:hover .anchor-link {
   display: none;
 }
 .text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -1027,7 +1270,7 @@ h6:hover .anchor-link {
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1042,7 +1285,7 @@ h6:hover .anchor-link {
 <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Data/image-predictions.tsv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1052,7 +1295,7 @@ h6:hover .anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -1076,7 +1319,7 @@ h6:hover .anchor-link {
 <span class="n">images</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Data/image-predictions.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1091,14 +1334,13 @@ h6:hover .anchor-link {
 <span class="n">ip_clean</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>consumer_key = 'HIDDEN'
 consumer_secret = 'HIDDEN'
@@ -1149,7 +1391,7 @@ print(fails_dict)</p>
 <span class="n">tae_clean</span><span class="p">[</span><span class="s1">&#39;favorite_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1168,7 +1410,7 @@ print(fails_dict)</p>
             <span class="k">break</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1178,7 +1420,7 @@ print(fails_dict)</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -1202,7 +1444,7 @@ e:\Anaconda3\lib\site-packages\ipykernel_launcher.py:6: FutureWarning: set_value
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">retweet_count</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1212,7 +1454,7 @@ e:\Anaconda3\lib\site-packages\ipykernel_launcher.py:6: FutureWarning: set_value
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -1296,7 +1538,7 @@ Name: retweet_count, Length: 1724, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">images</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -1306,7 +1548,7 @@ Name: retweet_count, Length: 1724, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -2279,7 +2521,7 @@ Name: retweet_count, Length: 1724, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">images</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2289,7 +2531,7 @@ Name: retweet_count, Length: 1724, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2319,8 +2561,7 @@ memory usage: 152.1+ KB
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Assess">Assess<a class="anchor-link" href="#Assess">&#182;</a></h1><p><a href="https://stackoverflow.com/questions/26763344/convert-pandas-column-to-datetime">https://stackoverflow.com/questions/26763344/convert-pandas-column-to-datetime</a></p>
 
@@ -2335,7 +2576,7 @@ memory usage: 152.1+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2345,7 +2586,7 @@ memory usage: 152.1+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -2507,7 +2748,7 @@ memory usage: 152.1+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2517,7 +2758,7 @@ memory usage: 152.1+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -2544,7 +2785,7 @@ Name: source, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2554,7 +2795,7 @@ Name: source, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -2596,7 +2837,7 @@ memory usage: 313.0+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2606,7 +2847,7 @@ memory usage: 313.0+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -2738,7 +2979,7 @@ memory usage: 313.0+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">rating_numerator</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2748,7 +2989,7 @@ memory usage: 313.0+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -2811,7 +3052,7 @@ Name: rating_numerator, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">rating_denominator</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2821,7 +3062,7 @@ Name: rating_numerator, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -2862,7 +3103,7 @@ Name: rating_denominator, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2872,7 +3113,7 @@ Name: rating_denominator, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -2949,8 +3190,7 @@ Name: name, Length: 957, dtype: int64</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Quality">Quality<a class="anchor-link" href="#Quality">&#182;</a></h3>
 </div>
@@ -2964,7 +3204,7 @@ Name: name, Length: 957, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae</span><span class="p">[(</span><span class="n">tae</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">islower</span><span class="p">())]</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -2974,7 +3214,7 @@ Name: name, Length: 957, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -3023,7 +3263,7 @@ Name: name, dtype: int64</pre>
 <span class="n">tae</span><span class="p">[(</span><span class="n">tae</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;named&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)]</span><span class="o">.</span><span class="n">text</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3033,7 +3273,7 @@ Name: name, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -3073,8 +3313,7 @@ Name: text, dtype: object</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="twitter_archive_enhanced">twitter_archive_enhanced<a class="anchor-link" href="#twitter_archive_enhanced">&#182;</a></h5><ul>
 <li>Some numerators are missing</li>
@@ -3100,16 +3339,14 @@ Name: text, dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Tidiness">Tidiness<a class="anchor-link" href="#Tidiness">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Dog stages should be 1 column   </li>
@@ -3121,16 +3358,14 @@ Name: text, dtype: object</pre>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Clean">Clean<a class="anchor-link" href="#Clean">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Column names start with lower letters</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>Capitalize column names with title function</p>
@@ -3146,14 +3381,13 @@ Name: text, dtype: object</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">tae_clean</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -3167,7 +3401,7 @@ Name: text, dtype: object</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3177,7 +3411,7 @@ Name: text, dtype: object</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -3214,8 +3448,7 @@ memory usage: 349.8+ KB
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Second and Third predictions for some pictures have close probability with first prediction and p1_dog is False</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>if p1_dog == false and p1_conf is close to p2_conf or p3_conf, in case p2_dog or p3_dog == true they will be copied as p1.</p>
@@ -3240,7 +3473,7 @@ memory usage: 349.8+ KB
             <span class="n">ip_clean</span><span class="o">.</span><span class="n">p1_conf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">p3_conf</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3250,7 +3483,7 @@ memory usage: 349.8+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -3283,8 +3516,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -3298,7 +3530,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ip_clean</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -3308,7 +3540,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -4274,8 +4506,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Retweets and columns of retweeted_status_id, retweeted_status_user_id, and retweeted_status_timestamp have to be removed.</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>Delete tweets of retweeted_status_id is not null. Drop columns retweeted_status_id, retweeted_status_user_id, and retweeted_status_timestamp</p>
@@ -4293,14 +4524,13 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <span class="n">tae_clean</span> <span class="o">=</span> <span class="n">tae_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Retweeted_Status_Id&#39;</span><span class="p">,</span><span class="s1">&#39;Retweeted_Status_User_Id&#39;</span><span class="p">,</span><span class="s1">&#39;Retweeted_Status_Timestamp&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -4314,7 +4544,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4324,7 +4554,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -4358,8 +4588,7 @@ memory usage: 288.9+ KB
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Source column should be cleaned and convert to category.</p>
 <h1 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h1><p>Clean source colummn text with str.extract and change to category with astype</p>
@@ -4380,7 +4609,7 @@ memory usage: 288.9+ KB
 <span class="n">tae_clean</span><span class="o">.</span><span class="n">Source</span> <span class="o">=</span> <span class="n">tae_clean</span><span class="o">.</span><span class="n">Source</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4390,7 +4619,7 @@ memory usage: 288.9+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -4408,8 +4637,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -4423,7 +4651,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">Source</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4433,7 +4661,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[26]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -4511,8 +4739,7 @@ Categories (4, object): [TweetDeck, Twitter Web Client, Twitter for iPhone, Vine
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Dog Stages have missing values. Some dogs have more than one stage column filled. None values should be NULL</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>Convert all stage values to Null and extract all values again from text. Remove entries inlude more than one stage.</p>
@@ -4553,7 +4780,7 @@ Categories (4, object): [TweetDeck, Twitter Web Client, Twitter for iPhone, Vine
         <span class="n">tae_clean</span><span class="o">.</span><span class="n">Floofer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4563,7 +4790,7 @@ Categories (4, object): [TweetDeck, Twitter Web Client, Twitter for iPhone, Vine
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -4615,8 +4842,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -4630,7 +4856,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -4640,7 +4866,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -5854,8 +6080,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Missing and Wrong dog names</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>All dog names starts with capital letter. I ll fix both situations with optimizing gathering regex and extracting
@@ -5891,7 +6116,7 @@ names again.</p>
         <span class="n">tae_clean</span><span class="o">.</span><span class="n">Name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -5901,7 +6126,7 @@ names again.</p>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -5942,8 +6167,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -5957,7 +6181,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -5967,7 +6191,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -6044,8 +6268,7 @@ Name: Name, Length: 951, dtype: int64</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Some numerators are missing. We need a "like" value instead of numerator and denominator</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>Some numerators contain . in values. Will find them with re.findall command. Then find numerator/denumerator value and store it as Point. Finally remove denumerator column.</p>
@@ -6076,7 +6299,7 @@ Name: Name, Length: 951, dtype: int64</pre>
 <span class="n">tae_clean</span> <span class="o">=</span> <span class="n">tae_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Rating_Denominator&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6086,7 +6309,7 @@ Name: Name, Length: 951, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stderr output_text">
@@ -6104,8 +6327,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -6119,7 +6341,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">Point</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6129,7 +6351,7 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+    <div class="prompt output_prompt">Out[32]:</div>
 
 
 
@@ -6168,8 +6390,7 @@ Name: Point, dtype: int64</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Tweet_Id, In_Reply_To_Status_Id, In_Reply_To_User_Id colums are not in string format</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>Change format of Tweet_Id, In_Reply_To_Status_Id, In_Reply_To_User_Id columns to string with astype function</p>
@@ -6188,14 +6409,13 @@ Name: Point, dtype: int64</pre>
 <span class="n">tae_clean</span><span class="o">.</span><span class="n">In_Reply_To_User_Id</span> <span class="o">=</span> <span class="n">tae_clean</span><span class="o">.</span><span class="n">In_Reply_To_User_Id</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -6209,7 +6429,7 @@ Name: Point, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tae_clean</span><span class="p">[</span><span class="s1">&#39;Tweet_Id&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6219,7 +6439,7 @@ Name: Point, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -6235,8 +6455,7 @@ Name: Point, dtype: int64</pre>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Timestamp column should be time type</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>pandas to_datetime function can be used to convert type</p>
@@ -6252,14 +6471,13 @@ Name: Point, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="p">[</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">tae_clean</span><span class="p">[</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">])</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h1>
 </div>
@@ -6273,7 +6491,7 @@ Name: Point, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6283,7 +6501,7 @@ Name: Point, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -6316,8 +6534,7 @@ memory usage: 337.2+ KB
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Tidyness">Tidyness<a class="anchor-link" href="#Tidyness">&#182;</a></h1><h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Merge image predictions with twitter archive</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>merge image predictions p1_conf,p1,p1_dog to twitter archive file with pd.merge command</p>
@@ -6337,14 +6554,13 @@ memory usage: 337.2+ KB
 <span class="n">tae_clean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">tae_clean</span><span class="p">,</span><span class="n">ip_clean</span><span class="p">[[</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span><span class="s1">&#39;P1_Conf&#39;</span><span class="p">,</span><span class="s1">&#39;P1_Dog&#39;</span><span class="p">,</span><span class="s1">&#39;Tweet_Id&#39;</span><span class="p">]],</span><span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;Tweet_Id&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -6358,7 +6574,7 @@ memory usage: 337.2+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6368,7 +6584,7 @@ memory usage: 337.2+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -6404,8 +6620,7 @@ memory usage: 268.9+ KB
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>merged image prediction column names are not understandable</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>change desired column names with the rename function</p>
@@ -6423,14 +6638,13 @@ memory usage: 268.9+ KB
 <span class="n">tae_clean</span><span class="o">.</span><span class="n">Breed</span> <span class="o">=</span> <span class="n">tae_clean</span><span class="o">.</span><span class="n">Breed</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Test">Test<a class="anchor-link" href="#Test">&#182;</a></h2>
 </div>
@@ -6444,7 +6658,7 @@ memory usage: 268.9+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tae_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6454,7 +6668,7 @@ memory usage: 268.9+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -6490,8 +6704,7 @@ memory usage: 268.9+ KB
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Issue">Issue<a class="anchor-link" href="#Issue">&#182;</a></h2><p>Dog stages should be one column</p>
 <h2 id="Define">Define<a class="anchor-link" href="#Define">&#182;</a></h2><p>with pd.melt function convert different stage columns into one. Remove duplicated values.</p>
@@ -6509,7 +6722,7 @@ memory usage: 268.9+ KB
 <span class="n">df1</span><span class="o">=</span><span class="n">df1</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Var&#39;</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6524,7 +6737,7 @@ memory usage: 268.9+ KB
 <span class="n">df1</span><span class="o">.</span><span class="n">Stage</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6534,7 +6747,7 @@ memory usage: 268.9+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -6561,7 +6774,7 @@ Name: Stage, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6571,7 +6784,7 @@ Name: Stage, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -6611,7 +6824,7 @@ memory usage: 222.2+ KB
 <div class=" highlight hl-ipython3"><pre><span></span> <span class="n">df1</span><span class="p">[</span><span class="s1">&#39;Name_Lenght&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df1</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6624,7 +6837,7 @@ memory usage: 222.2+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="n">df1</span><span class="o">.</span><span class="n">isDog</span> <span class="o">==</span> <span class="kc">True</span><span class="p">]</span><span class="o">.</span><span class="n">Breed</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6634,7 +6847,7 @@ memory usage: 222.2+ KB
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -6725,7 +6938,7 @@ Name: Breed, Length: 155, dtype: int64</pre>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;legend.fontsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6739,7 +6952,7 @@ Name: Breed, Length: 155, dtype: int64</pre>
 <span class="n">df1_corr</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6749,7 +6962,7 @@ Name: Breed, Length: 155, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -6854,7 +7067,7 @@ Name: Breed, Length: 155, dtype: int64</pre>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6864,7 +7077,7 @@ Name: Breed, Length: 155, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -6908,7 +7121,7 @@ memory usage: 237.8+ KB
 <span class="n">df2</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6918,7 +7131,7 @@ memory usage: 237.8+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -6964,7 +7177,7 @@ memory usage: 236.7+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Point vs Name Lenght&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -6974,7 +7187,7 @@ memory usage: 236.7+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -7001,7 +7214,7 @@ memory usage: 236.7+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Score&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -7011,7 +7224,7 @@ memory usage: 236.7+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -7042,7 +7255,7 @@ memory usage: 236.7+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Retweet Count&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -7052,7 +7265,7 @@ memory usage: 236.7+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -7078,7 +7291,7 @@ memory usage: 236.7+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -7088,7 +7301,7 @@ memory usage: 236.7+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -7114,7 +7327,7 @@ memory usage: 236.7+ KB
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">);</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -7124,7 +7337,7 @@ memory usage: 236.7+ KB
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -7149,7 +7362,7 @@ memory usage: 236.7+ KB
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Data/twitter_archive_master.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -7186,37 +7399,90 @@ memory usage: 236.7+ KB
 }
 </script>
 
-    </div><!-- /.entry-content -->
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
 
-  </article>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+    <p>
+      <strong>About Mehmet Saruhan</strong><br/>
+        Father, husband, son, self starter, fishing, movie, wow.
+    </p>
+</div><!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/mehmet-saruhan-abb3a25b/"><i class="fa fa-linkedin-square fa-lg"></i> Linkedin</a></li>
+    <li class="list-group-item"><a href="https://github.com/saruhanm"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Archive -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Archive</span></h4>
+  <ul class="list-group" id="archive">
+        <li class="list-group-item">
+          <a href="/posts/2018/Nov/index.html"><i class="fa fa-calendar fa-lg"></i>November 2018 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/posts/2018/Oct/index.html"><i class="fa fa-calendar fa-lg"></i>October 2018 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/posts/2018/Sep/index.html"><i class="fa fa-calendar fa-lg"></i>September 2018 (1)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/posts/2018/Aug/index.html"><i class="fa fa-calendar fa-lg"></i>August 2018 (2)
+          </a>
+        </li>
+        <li class="list-group-item">
+          <a href="/posts/2018/Jul/index.html"><i class="fa fa-calendar fa-lg"></i>July 2018 (1)
+          </a>
+        </li>
+  </ul>
+</li>
+<!-- End Sidebar/Archive -->
+  </ul>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 Mehmet Saruhan
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+
 
 </body>
 </html>
